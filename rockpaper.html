@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+  <meta charset="UTF-8"/>
+</head>
+<body>
+  <script>
+    
+let selectieComputerAleatorie;
+let playerSelection;
+let randomizare;
+let comparatie;
+let scorRunda;
+let scorInitial = 0;
+let scor1;
+let scor2;
+let scor3;
+let scor4;
+let scor5;
+let scorFinal;
+let textRezultat;
+
+
+function computerDecision () {
+  randomizare = Math.floor(Math.random()*10 + 3);
+  if (randomizare <= 4){
+    selectieComputerAleatorie = 'rock';
+  }
+  else if (randomizare >= 9){
+    selectieComputerAleatorie = 'scissors';
+  }
+  else {
+    selectieComputerAleatorie = 'paper';
+  }
+
+  return selectieComputerAleatorie;
+}
+
+function faceComparatia () {
+switch (selectieComputerAleatorie) {
+case 'rock':
+if (playerSelection === 'rock') {
+  comparatie = 'Egalitate';
+  scorRunda = scorInitial;
+  return comparatie;
+  }  else if (playerSelection === 'paper') {
+    comparatie = 'Mnoh... de data asta am pierdut :(';
+    scorRunda = scorInitial - 1;
+    return comparatie;
+  }  else {
+    comparatie = 'Am castigaaat :))';
+    scorRunda = scorInitial + 1;
+    return comparatie;
+  }
+ break;
+
+case 'paper':
+if (playerSelection === 'rock') {
+  comparatie = 'Am castigaaat :))';
+  scorRunda = scorInitial + 1;
+  return comparatie;
+} else if (playerSelection === 'paper') {
+  comparatie = 'Egalitate';
+  scorRunda = scorInitial;
+  return comparatie;
+} else {
+  comparatie = 'Mnoh... de data asta am pierdut :(';
+  scorRunda = scorInitial - 1;
+  return comparatie;
+ }
+break;
+
+case 'scissors':
+if (playerSelection === 'rock') {
+  comparatie = 'Mnoh... de data asta am pierdut :(';
+  scorRunda = scorInitial - 1;
+  return comparatie;
+  } else if (playerSelection === 'paper') {
+  comparatie = 'Am castigaaat :))';
+  scorRunda = scorInitial + 1;
+  return comparatie;
+} else {
+  comparatie = 'Egalitate';
+  scorRunda = scorInitial;
+  return comparatie;
+}
+break;
+}
+}
+
+
+function play1(){
+computerDecision();
+playerSelection = prompt('Alegeti rock, paper sau scissors');
+faceComparatia();
+scor1 = 0 + scorRunda;
+return scor1;
+}
+
+function play2(){
+computerDecision();
+playerSelection = prompt('Alegeti rock, paper sau scissors');
+faceComparatia();
+scor2 = 0 + scorRunda;
+return scor2;
+}
+
+function play3(){
+computerDecision();
+playerSelection = prompt('Alegeti rock, paper sau scissors');
+faceComparatia();
+scor3 = 0 + scorRunda;
+return scor3;
+}
+
+function play4(){
+computerDecision();
+playerSelection = prompt('Alegeti rock, paper sau scissors');
+faceComparatia();
+scor4 = 0 + scorRunda;
+return scor4;
+}
+
+function play5(){
+computerDecision();
+playerSelection = prompt('Alegeti rock, paper sau scissors');
+faceComparatia();
+scor5 = 0 + scorRunda;
+return scor5;
+}
+
+function alertaRezultat(){
+alert(textRezultat);
+}
+
+play1();
+play2();
+play3();
+play4();
+play5();
+scorFinal = 0 + scor1 + scor2 + scor3 + scor4 + scor5;
+
+switch (scorFinal) {
+  case -5:
+  textRezultat = 'Ghinion, am castigat cu 5 la 0';
+  break;
+  case -4:
+  textRezultat = 'Ghinion, am castigat cu 4 puncte diferenta';
+  break;
+  case -3:
+  textRezultat = 'Ghinion, am castigat cu 3 puncte diferenta';
+  break;
+  case -2:
+  textRezultat = 'Ghinion, am castigat cu 2 puncte diferenta';
+  break;
+  case -1:
+  textRezultat = 'Ghinion, am castigat cu 1 punct diferenta';
+  break;
+  case 0: 
+  textRezultat = 'Hopa... egalitate perfecta... aham...';
+  break;
+  case 1:
+  textRezultat = 'Uau, 1 punct... ai castigat la limita';
+  break;
+  case 2:
+  textRezultat = 'Uau, 2 puncte... ai castigat la limita';
+  break;
+  case 3:
+  textRezultat = 'Uau, ai castigat cu 3 puncte diferenta';
+  break;
+  case 4:
+  textRezultat = 'Uau, ai castigat cu 4 puncte diferenta';
+  break;
+  case 5:
+  textRezultat = 'Uau, ai castigat cu 5 la 0... ar trebui sa joci la loto';
+  break;
+ }
+
+textRezultat=textRezultat;
+
+alertaRezultat();
+
+
+console.log(scor1, scor2, scor3, scor4, scor5);
+console.log(scorFinal);
+console.log(textRezultat);
+
+
+
+
+    
+  </script>
+</body>
+</html>
